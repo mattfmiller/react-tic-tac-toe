@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Game from './components/Game';
 import { createStore } from 'redux';
-import tttReducer from './reducers/ttt-reducer';
+import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
 
-const store = createStore(tttReducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
