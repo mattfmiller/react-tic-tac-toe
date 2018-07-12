@@ -8,6 +8,10 @@ import { Provider } from 'react-redux';
 
 const store = createStore(rootReducer);
 
+let unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+);
+
 ReactDOM.render(
   <Provider store={store}>
     <Game />

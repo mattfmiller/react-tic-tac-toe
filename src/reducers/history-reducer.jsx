@@ -7,6 +7,7 @@ export default (state = {
   case 'MARK_BOX':
     const { i, turn, player } = action;
     const current = Object.assign({}, state[turn - 1]);
+    console.log(state[turn -1]);
     let newBoard = current.squares.slice();
     newBoard[i] = player;
       let newState = Object.assign({}, state, {

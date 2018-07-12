@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../index.css';
 import Square from './Square';
 
@@ -10,7 +9,6 @@ function Board(props) {
       <Square
         value={props.squares[i]}
         i={i}
-        // onClick ={() => props.onClick(i)}
       />
     );
   }

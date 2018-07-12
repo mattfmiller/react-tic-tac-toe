@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../index.css';
 import { connect } from 'react-redux';
 
@@ -7,7 +6,6 @@ function Square(props) {
 
   function handleClick() {
     const { dispatch } = props;
-    // const history = props.history.slice(0, props.stepNumber + 1);
     const current = props.history[props.stepNumber];
     const squares = current.squares;
     if (calculateWinner(squares) || squares[props.i]) {

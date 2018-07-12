@@ -1,43 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../index.css';
 import Board from './Board';
 import { connect } from 'react-redux';
 
 class Game extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     history: [{
-  //       squares: Array(9).fill(null),
-  //     }],
-  //     stepNumber: 0,
-  //     xIsNext: true,
-  //   };
-  // }
-
-  // handleClick(i) {
-  //   const history = this.state.history.slice(0, this.state.stepNumber + 1);
-  //   const current = history[history.length - 1];
-  //   const squares = current.squares.slice();
-  //   if (calculateWinner(squares) || squares[i]) {
-  //     return;
-  //   }
-  //   squares[i] = this.state.xIsNext ? 'X' : 'O';
-  //   this.setState({
-  //     history: history.concat([{
-  //       squares: squares,
-  //     }]),
-  //     stepNumber: history.length,
-  //     xIsNext: !this.state.xIsNext,
-  //   });
-  // }
 
   jumpTo(step) {
     const {dispatch} = this.props;
     let action = {
       type: 'RECORD_TURN',
-      turn: step,
+      turn: parseInt(step),
     }
       dispatch(action);
     const action3 = {
@@ -48,8 +20,6 @@ class Game extends React.Component {
   }
 
   render() {
-    // console.log(this.props.currentState);
-    // const history = this.props.history;
     const current = this.props.history[this.props.stepNumber];
     console.log(this.props.history);
     console.log(this.props.stepNumber);
@@ -94,7 +64,6 @@ class Game extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    // currentState: state,
     history: state.history,
     stepNumber: state.stepNumber,
     xIsNext: state.xIsNext
