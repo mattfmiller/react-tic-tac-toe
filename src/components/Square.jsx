@@ -6,15 +6,10 @@ import { connect } from 'react-redux';
 function Square(props) {
 
   function handleClick() {
-    console.log(props);
     const { dispatch } = props;
     // const history = props.history.slice(0, props.stepNumber + 1);
     const current = props.history[props.stepNumber];
-    console.log(props.stepNumber);
-    console.log(props.history);
-    console.log(current);
     const squares = current.squares;
-    console.log(squares);
     if (calculateWinner(squares) || squares[props.i]) {
       return;
     }

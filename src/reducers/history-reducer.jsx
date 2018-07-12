@@ -14,6 +14,7 @@ export default (state = {
           squares: newBoard
         }
       });
+      console.log(newState);
     return newState;
   default:
     return state;

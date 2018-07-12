@@ -7,7 +7,11 @@ function Board(props) {
 
   function renderSquare(i) {
     return (
-      <Square value={props.squares[i]} i={i} onClick ={() => props.onClick(i)}/>
+      <Square
+        value={props.squares[i]}
+        i={i}
+        // onClick ={() => props.onClick(i)}
+      />
     );
   }
 
